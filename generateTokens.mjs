@@ -1,38 +1,40 @@
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 import fs from 'fs';
 import { exec } from 'child_process';
 import StyleDictionary from 'style-dictionary';
 
 
 const projectPath = process.env.GITLAB_PROJECT_PATH;
-const tokenName = 'tokens%2Ejson'; // символ "." меняем на %2E
-const tokenUrl = `https://gitlab.com/api/v4/projects/${projectPath}/repository/files/${tokenName}?ref=main`;
+//const tokenName = 'tokens%2Ejson'; // символ "." меняем на %2E
+//const tokenUrl = `https://gitlab.com/api/v4/projects/${projectPath}/repository/files/${tokenName}?ref=main`;
 const tokensBuildDir = './tokens';
-const baseTokenName = 'base-token.json';
-const cssBuildPath = 'public/css/tokens/';
+const baseTokenName = 'tokens.json';
+const cssBuildPath = 'src/tokens/';
 
 // Создаем папку tokens если она не создана
-if (!fs.existsSync(tokensBuildDir)) {
-  fs.mkdirSync(tokensBuildDir);
-}
+//if (!fs.existsSync(tokensBuildDir)) {
+//  fs.mkdirSync(tokensBuildDir);
+//}
 
 // Загружаем файл токена из gitHub
-async function getToken() {
-  const res = await fetch(tokenUrl, {
-    method: 'GET',
-    headers: {
-      "PRIVATE-TOKEN": process.env.GITLAB_ACCESS_KEY,
-    }
-  });
-  return await res.json();
-}
+// async function getToken() {
+//   const res = await fetch(tokenUrl, {
+//     method: 'GET',
+//     headers: {
+//       "PRIVATE-TOKEN": process.env.GITLAB_ACCESS_KEY,
+//     }
+//   });
+//   return await res.json();
+// }
 
-const response = await getToken();
-const token = JSON.parse(Buffer.from(response.content, "base64").toString());
+//const response = await getToken();
+//const token = JSON.parse(Buffer.from(response.content, "base64").toString());
 
 // Сохраняем base-token в файл
-fs.writeFileSync(`${tokensBuildDir}/${baseTokenName}`, JSON.stringify(token, null, 2));
+//fs.writeFileSync(`${tokensBuildDir}/${baseTokenName}`, JSON.stringify(token, null, 2));
 
+
+const token = JSON.parse(fs.readFileSync(`${tokensBuildDir}/${baseTokenName}`));
 // Создаем css файлы
 buildTokensAndCss(token.$metadata.tokenSetOrder);
 
@@ -74,11 +76,11 @@ function buildCss(filename) {
       'source': [`${tokensBuildDir}/${filename}.json`],
       'platforms': {
         'css': {
-          'transformGroup': `js`,
+          'transformGroup': `css`,
           'buildPath': cssBuildPath,
           'files': [{
-            'destination': `${filename}.js`,
-            'format': `javascript/es6`
+            'destination': `${filename}.css`,
+            'format': `css/variables`
           }]
         },
       }

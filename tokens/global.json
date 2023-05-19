@@ -1,0 +1,38 @@
+{
+  "Primary": {
+    "value": "#199af0",
+    "type": "color"
+  },
+  "Text": {
+    "value": "#ffffff",
+    "type": "color"
+  },
+  "height": {
+    "button": {
+      "primary": {
+        "default": {
+          "value": 30,
+          "type": "sizing"
+        }
+      }
+    }
+  },
+  "button": {
+    "primary": {
+      "default": {
+        "value": 10,
+        "type": "borderRadius"
+      }
+    }
+  },
+  "background": {
+    "button": {
+      "primary": {
+        "default": {
+          "value": "#199af0",
+          "type": "color"
+        }
+      }
+    }
+  }
+}
