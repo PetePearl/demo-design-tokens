@@ -1,12 +1,17 @@
 /**
  * Do not edit directly
- * Generated on Fri, 19 May 2023 00:11:25 GMT
+ * Generated on Sun, 21 May 2023 00:15:21 GMT
  */
 
 :root {
-  --primary: #199af0;
-  --text: #ffffff;
-  --height-button-primary-default: 30;
-  --button-primary-default: 10;
-  --background-button-primary-default: #199af0;
+  --height-button-primary-default: 40px;
+  --height-button-warning-default: 20px;
+  --borderradius-button-primary-default: 20px;
+  --borderradius-button-warning-default: 10px;
+  --background-button-primary-default: #f0f;
+  --background-button-warning-default: #F39508;
+  --color-button-primary-default: #ffffff;
+  --color-button-warning-default: #000000;
+  --padding-button-primary-default: 40px;
+  --padding-button-warning-default: 10px;
 }

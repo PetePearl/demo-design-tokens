@@ -1,8 +1,22 @@
 .button {
-    height: var(--height-button-primary-default);
-    border-radius: var(--button-primary-default);
-    background-color: var(--primary);
-    color: var(--text);
     display: inline-block;
     border: none;
+}
+
+.primary {
+    height: var(--height-button-primary-default);
+    border-radius: var(--borderradius-button-primary-default);
+    background-color: var(--background-button-primary-default);
+    padding-left: var(--padding-button-primary-default);
+    padding-right: var(--padding-button-primary-default);
+    color: var(--color-button-primary-default);
+}
+
+.warning {
+    height: var(--height-button-warning-default);
+    border-radius: var(--borderradius-button-warning-default);
+    background-color: var(--background-button-warning-default);
+    padding-left: var(--padding-button-warning-default);
+    padding-right: var(--padding-button-warning-default);
+    color: var(--color-button-warning-default);
 }

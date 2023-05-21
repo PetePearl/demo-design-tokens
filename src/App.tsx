@@ -5,7 +5,12 @@ function App() {
 
   return (
     <div className={styles.wrapper}>
-        <Button>Button</Button>
+        <div className={styles.buttons}>
+            <Button>primary button</Button>
+            <Button variant='warning'>warning button</Button>
+        </div>
+
+
     </div>
   )
 }

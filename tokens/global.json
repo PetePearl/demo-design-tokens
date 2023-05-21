@@ -1,27 +1,33 @@
 {
-  "Primary": {
-    "value": "#199af0",
-    "type": "color"
-  },
-  "Text": {
-    "value": "#ffffff",
-    "type": "color"
-  },
   "height": {
     "button": {
       "primary": {
         "default": {
-          "value": 30,
+          "value": "40px",
+          "type": "sizing"
+        }
+      },
+      "warning": {
+        "default": {
+          "value": "20px",
           "type": "sizing"
         }
       }
     }
   },
-  "button": {
-    "primary": {
-      "default": {
-        "value": 10,
-        "type": "borderRadius"
+  "borderradius": {
+    "button": {
+      "primary": {
+        "default": {
+          "value": "20px",
+          "type": "borderRadius"
+        }
+      },
+      "warning": {
+        "default": {
+          "value": "10px",
+          "type": "borderRadius"
+        }
       }
     }
   },
@@ -29,8 +35,46 @@
     "button": {
       "primary": {
         "default": {
-          "value": "#199af0",
+          "value": "#f0f",
           "type": "color"
+        }
+      },
+      "warning": {
+        "default": {
+          "value": "#F39508",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "color": {
+    "button": {
+      "primary": {
+        "default": {
+          "value": "#fff",
+          "type": "color"
+        }
+      },
+      "warning": {
+        "default": {
+          "value": "#000",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "padding": {
+    "button": {
+      "primary": {
+        "default": {
+          "value": "40px",
+          "type": "spacing"
+        }
+      },
+      "warning": {
+        "default": {
+          "value": "10px",
+          "type": "spacing"
         }
       }
     }
